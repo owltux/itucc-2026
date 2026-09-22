@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pendaftaran Indonesia Tangible Unplugged Coding Competition 2026</title>
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <!-- QRCode JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
@@ -42,6 +46,7 @@
             }
         }
     </script>
+    
     <style>
         body {
             background: radial-gradient(circle at 10% 20%, rgba(153, 246, 228, 0.4) 0%, rgba(240, 253, 250, 0.2) 40%),
@@ -90,6 +95,20 @@
         .badge-glow {
             box-shadow: 0 0 15px rgba(20, 184, 166, 0.3);
         }
+        
+        /* Custom scrollbar for tables */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #14b8a6;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body class="text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
@@ -115,7 +134,7 @@
                     <a href="#jadwal" class="px-4 py-2 rounded-xl hover:bg-white/80 hover:text-brand-700 transition">Jadwal & Jenjang</a>
                     <a href="#pendaftaran" class="px-4 py-2 rounded-xl hover:bg-white/80 hover:text-brand-700 transition">Form Pendaftaran</a>
                     <a href="#rekap" class="px-4 py-2 rounded-xl hover:bg-white/80 text-brand-700 font-bold bg-brand-100/70 border border-brand-200/80 transition flex items-center gap-1.5">
-                        <i class="fa-solid fa-lock text-brand-600"></i> Rekap Data (Admin)
+                        <i class="fa-solid fa-lock text-brand-600"></i> Rekap Data
                     </a>
                 </nav>
 
@@ -178,7 +197,7 @@
                             <div class="glass-card p-3.5 rounded-2xl border border-white/80 col-span-2 sm:col-span-1">
                                 <span class="text-[11px] text-slate-500 block font-semibold">Jenjang Peserta</span>
                                 <span class="text-xs sm:text-sm font-extrabold text-slate-800 flex items-center gap-1.5 mt-0.5">
-                                    <i class="fa-solid fa-graduation-cap text-brand-600"></i> SD / SMP / SMA
+                                    <i class="fa-solid fa-graduation-cap text-brand-600"></i> SD/SMP/SMA
                                 </span>
                             </div>
                         </div>
@@ -206,7 +225,7 @@
                                     </div>
                                     <div>
                                         <strong class="block text-white font-bold">Gateway To The World Cup!</strong>
-                                        <span class="text-brand-100 text-[11px]">Batu loncatan menuju panggung kompetisi koding tingkat dunia.</span>
+                                        <span class="text-brand-100 text-[11px]">Batu loncatan menuju kompetisi koding dunia.</span>
                                     </div>
                                 </div>
                                 
@@ -269,7 +288,7 @@
                         <i class="fa-solid fa-school"></i>
                     </div>
                     <h3 class="text-lg font-black text-slate-800">Jenjang SMP</h3>
-                    <p class="text-xs text-slate-500 mt-0.5">Siswa Sekolah Menengah Pertama (Kelas 7 - 9)</p>
+                    <p class="text-xs text-slate-500 mt-0.5">Sekolah Menengah Pertama (Kelas 7 - 9)</p>
                     <div class="mt-6 pt-4 border-t border-slate-200/80 space-y-2.5">
                         <div class="flex items-center justify-between text-xs">
                             <span class="text-slate-500 font-medium"><i class="fa-regular fa-clock text-sky-600 mr-1.5"></i> Waktu Lomba</span>
@@ -321,7 +340,7 @@
                 <div class="glass-dark-banner text-white p-6 sm:p-8 relative">
                     <div class="flex items-center justify-between">
                         <div>
-                            <span class="text-xs font-extrabold tracking-widest text-brand-200 uppercase block mb-1">Formulir Pendaftaran Poin Utama</span>
+                            <span class="text-xs font-extrabold tracking-widest text-brand-200 uppercase block mb-1">Formulir Pendaftaran Utama</span>
                             <h2 class="text-2xl sm:text-3xl font-black">Registrasi Peserta / Tim</h2>
                         </div>
                         <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-brand-200 text-2xl font-bold backdrop-blur-md border border-white/20">
@@ -397,14 +416,15 @@
                             <div>
                                 <label for="modeLomba" class="block text-xs font-bold text-slate-700 mb-1">Format Keikutsertaan <span class="text-rose-500">*</span></label>
                                 <select id="modeLomba" required class="glass-input w-full py-2.5 px-3 rounded-xl text-xs focus:outline-none transition font-medium">
+                                    <option value="" disabled selected>-- Pilih Format --</option>
                                     <option value="On-site">On-site (Hadir di Lokasi)</option>
                                     <option value="Online">Online (Daring / Remote)</option>
                                 </select>
                             </div>
 
                             <div>
-                                <label for="guruPembina" class="block text-xs font-bold text-slate-700 mb-1">Nama Guru Pembina / Pendamping</label>
-                                <input type="text" id="guruPembina" placeholder="Nama Guru / Pembina Tim (Opsional)" class="glass-input w-full py-2.5 px-3 rounded-xl text-xs focus:outline-none transition">
+                                <label for="guruPembina" class="block text-xs font-bold text-slate-700 mb-1">Nama Guru Pembina (Opsional)</label>
+                                <input type="text" id="guruPembina" placeholder="Nama Guru / Pembina Tim" class="glass-input w-full py-2.5 px-3 rounded-xl text-xs focus:outline-none transition">
                             </div>
                         </div>
                     </div>
@@ -425,7 +445,7 @@
 
                         <!-- Dynamic Member Container -->
                         <div id="membersContainer" class="space-y-4">
-                            <!-- Member row template loaded via JS -->
+                            <!-- Members will be loaded here via JS -->
                         </div>
                     </div>
 
@@ -433,9 +453,9 @@
                     <div class="pt-6 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
                         <div class="text-xs text-slate-500 flex items-center gap-2">
                             <i class="fa-solid fa-circle-check text-brand-600 text-sm"></i>
-                            <span>Data pendaftaran tersimpan secara aman.</span>
+                            <span>Data pendaftaran tersimpan secara aman di browser.</span>
                         </div>
-                        <button type="submit" id="submitBtn" class="w-full sm:w-auto bg-brand-700 hover:bg-brand-800 text-white font-extrabold px-8 py-3.5 rounded-2xl shadow-lg shadow-brand-700/25 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-xs">
+                        <button type="submit" class="w-full sm:w-auto bg-brand-700 hover:bg-brand-800 text-white font-extrabold px-8 py-3.5 rounded-2xl shadow-lg shadow-brand-700/25 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-xs">
                             <i class="fa-solid fa-paper-plane"></i> Kirim Pendaftaran
                         </button>
                     </div>
@@ -445,603 +465,418 @@
     </section>
 
     <!-- DATA REKAP SECTION (DILINDUNGI PASSWORD/PIN ADMIN) -->
-    <section id="rekap" class="py-12">
+    <section id="rekap" class="py-12 bg-white/30 backdrop-blur-sm border-t border-white/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="glass-panel p-6 sm:p-8 rounded-[2.5rem] space-y-6">
                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div>
                         <span class="text-brand-700 font-extrabold text-xs uppercase tracking-widest bg-brand-100 px-3 py-1 rounded-full border border-brand-200">
-                            <i class="fa-solid fa-shield-halved mr-1"></i> Area Terproteksi (Admin Only)
+                            <i class="fa-solid fa-shield-halved mr-1"></i> Area Terproteksi
                         </span>
                         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Data Peserta Terdaftar</h2>
                         <p class="text-slate-600 text-xs mt-1">Hanya pengelola / admin yang memiliki akses untuk membuka data rekapitulasi ini.</p>
                     </div>
+                    <div id="adminActionBtnContainer" class="hidden flex-wrap gap-2">
+                        <button onclick="openGSheetsSetup()" class="bg-amber-100 text-amber-700 hover:bg-amber-200 text-xs font-bold px-4 py-2 rounded-xl transition flex items-center gap-2 border border-amber-200">
+                            <i class="fa-solid fa-gear"></i> Setup G-Sheets
+                        </button>
+                        <button onclick="exportToGoogleSheets()" class="bg-emerald-100 text-emerald-700 hover:bg-emerald-200 text-xs font-bold px-4 py-2 rounded-xl transition flex items-center gap-2 border border-emerald-200">
+                            <i class="fa-solid fa-file-excel"></i> Export ke G-Sheets
+                        </button>
+                        <button onclick="logoutAdmin()" class="bg-rose-100 text-rose-700 hover:bg-rose-200 text-xs font-bold px-4 py-2 rounded-xl transition flex items-center gap-2 border border-rose-200">
+                            <i class="fa-solid fa-right-from-bracket"></i> Keluar Admin
+                        </button>
+                    </div>
                 </div>
 
                 <!-- TAMPILAN LOCK (JIKA BELUM LOGIN ADMIN) -->
-                <div id="adminLockState" class="glass-card p-8 rounded-2xl text-center space-y-4 max-w-md mx-auto border border-brand-200">
-                    <div class="w-16 h-16 bg-brand-100 text-brand-700 rounded-full flex items-center justify-center text-2xl mx-auto font-bold shadow-inner">
+                <div id="adminLockScreen" class="py-12 flex flex-col items-center justify-center text-center">
+                    <div class="w-20 h-20 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center text-3xl mb-4 shadow-inner border border-brand-200">
                         <i class="fa-solid fa-lock"></i>
                     </div>
-                    <div>
-                        <h3 class="text-base font-extrabold text-slate-800">Masukkan PIN Admin</h3>
-                        <p class="text-xs text-slate-500 mt-1">Silakan masukkan PIN untuk mengakses data peserta.</p>
-                    </div>
-                    <div class="space-y-2">
-                        <input type="password" id="adminPinInput" placeholder="Masukkan PIN (Default: 123456)" class="w-full glass-input p-2.5 rounded-xl text-xs text-center font-bold tracking-widest focus:outline-none">
-                        <button onclick="unlockAdminData()" class="w-full bg-brand-700 hover:bg-brand-800 text-white font-bold py-2.5 rounded-xl transition text-xs shadow-md">
-                            <i class="fa-solid fa-key mr-1"></i> Buka Akses Data
-                        </button>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Akses Terkunci</h3>
+                    <p class="text-xs text-slate-500 mb-6 max-w-sm">Silakan masukkan PIN Administrator untuk melihat rekap data tim. (Gunakan PIN default: <strong>12345</strong>)</p>
+                    
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="flex items-center gap-2 max-w-xs mx-auto">
+                            <input type="password" id="adminPin" class="glass-input w-40 py-2.5 px-4 rounded-xl text-center font-black tracking-[0.3em] focus:outline-none placeholder-slate-300" placeholder="•••••">
+                            <button onclick="unlockAdmin()" class="bg-brand-700 hover:bg-brand-800 text-white px-5 py-2.5 rounded-xl transition shadow-md font-bold text-sm">
+                                Buka <i class="fa-solid fa-unlock ml-1"></i>
+                            </button>
+                        </div>
+                        <p id="pinError" class="text-xs text-rose-500 font-semibold opacity-0 transition-opacity">PIN yang Anda masukkan salah!</p>
                     </div>
                 </div>
 
-                <!-- DASHBOARD DATA (HANYA TAMPIL SETELAH PIN BENAR) -->
-                <div id="adminContentState" class="hidden space-y-6">
-                    <div class="flex items-center justify-between bg-emerald-50 border border-emerald-200 p-3.5 rounded-xl text-emerald-800 text-xs font-semibold">
-                        <span><i class="fa-solid fa-circle-check mr-1 text-emerald-600"></i> Akses Admin Diberikan. Anda sedang melihat data rekapitulasi terbatas.</span>
-                        <button onclick="lockAdminData()" class="bg-emerald-700 text-white px-3 py-1 rounded-lg text-[11px] font-bold hover:bg-emerald-800 transition">
-                            <i class="fa-solid fa-lock mr-1"></i> Kunci Kembali
-                        </button>
-                    </div>
-
-                    <!-- TAB FILTERS & SEARCH -->
-                    <div class="glass-card p-4 rounded-2xl border border-white/80 space-y-4">
-                        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-                            <!-- Jenjang Tabs -->
-                            <div class="flex items-center space-x-1 bg-slate-100/80 p-1.5 rounded-xl border border-slate-200/60 w-full sm:w-auto">
-                                <button onclick="filterByJenjang('SEMUA')" id="tab-SEMUA" class="jenjang-tab-btn px-4 py-2 rounded-lg text-xs font-extrabold transition bg-brand-700 text-white shadow-sm">
-                                    Semua Jenjang
-                                </button>
-                                <button onclick="filterByJenjang('SD')" id="tab-SD" class="jenjang-tab-btn px-4 py-2 rounded-lg text-xs font-bold text-slate-600 hover:bg-white/80 transition">
-                                    Jenjang SD
-                                </button>
-                                <button onclick="filterByJenjang('SMP')" id="tab-SMP" class="jenjang-tab-btn px-4 py-2 rounded-lg text-xs font-bold text-slate-600 hover:bg-white/80 transition">
-                                    Jenjang SMP
-                                </button>
-                                <button onclick="filterByJenjang('SMA')" id="tab-SMA" class="jenjang-tab-btn px-4 py-2 rounded-lg text-xs font-bold text-slate-600 hover:bg-white/80 transition">
-                                    Jenjang SMA
-                                </button>
-                            </div>
-
-                            <!-- Search Input & Class Filter -->
-                            <div class="flex items-center gap-3 w-full sm:w-auto">
-                                <select id="filterKelas" onchange="applyFilters()" class="py-2 px-3 glass-input rounded-xl text-xs font-semibold focus:outline-none">
-                                    <option value="SEMUA">Semua Kelas</option>
-                                </select>
-
-                                <div class="relative w-full sm:w-64">
-                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
-                                        <i class="fa-solid fa-magnifying-glass text-xs"></i>
-                                    </span>
-                                    <input type="text" id="searchInput" onkeyup="applyFilters()" placeholder="Cari nama tim/sekolah..." class="w-full pl-8 pr-3 py-2 glass-input rounded-xl text-xs focus:outline-none">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Stats summary badges -->
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-xs">
-                            <div class="glass-card p-3 rounded-2xl">
-                                <span class="text-slate-500 font-semibold block text-[11px]">Total Tim Terdaftar</span>
-                                <strong id="statTotalTim" class="text-lg font-black text-slate-800">0</strong>
-                            </div>
-                            <div class="glass-card p-3 rounded-2xl">
-                                <span class="text-slate-500 font-semibold block text-[11px]">Peserta SD</span>
-                                <strong id="statSD" class="text-lg font-black text-emerald-600">0 Tim</strong>
-                            </div>
-                            <div class="glass-card p-3 rounded-2xl">
-                                <span class="text-slate-500 font-semibold block text-[11px]">Peserta SMP</span>
-                                <strong id="statSMP" class="text-lg font-black text-sky-600">0 Tim</strong>
-                            </div>
-                            <div class="glass-card p-3 rounded-2xl">
-                                <span class="text-slate-500 font-semibold block text-[11px]">Peserta SMA</span>
-                                <strong id="statSMA" class="text-lg font-black text-purple-600">0 Tim</strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- DATA TABLE -->
-                    <div class="glass-card rounded-2xl overflow-hidden border border-white/80">
+                <!-- TAMPILAN DATA TABLE (JIKA SUDAH LOGIN ADMIN) -->
+                <div id="adminDataView" class="hidden animate-fade-in">
+                    <div class="bg-white/50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
                         <div class="overflow-x-auto">
-                            <table class="w-full text-left text-xs border-collapse">
-                                <thead class="bg-slate-100/90 text-slate-700 uppercase font-extrabold border-b border-slate-200/80">
-                                    <tr>
-                                        <th class="p-3.5">No</th>
-                                        <th class="p-3.5">Jenjang</th>
-                                        <th class="p-3.5">Nama Tim</th>
-                                        <th class="p-3.5">Asal Sekolah</th>
-                                        <th class="p-3.5">Anggota & Kelas</th>
-                                        <th class="p-3.5">No. HP / WA</th>
-                                        <th class="p-3.5">Mode</th>
-                                        <th class="p-3.5 text-center">Aksi / Tiket</th>
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-100/80 text-slate-600 text-[11px] uppercase tracking-wider font-extrabold border-b border-slate-200">
+                                        <th class="p-4 w-12 text-center">No</th>
+                                        <th class="p-4">Tim & Sekolah</th>
+                                        <th class="p-4">Jenjang & Mode</th>
+                                        <th class="p-4">Anggota Tim</th>
+                                        <th class="p-4 text-center">Aksi</th>
                                     </tr>
                                 </thead>
-                                <tbody id="registrationsTableBody" class="divide-y divide-slate-200/60 font-medium text-slate-700">
-                                    <!-- Rows dynamically populated -->
+                                <tbody id="registrationsTableBody" class="text-xs text-slate-700 divide-y divide-slate-100 bg-white/40">
+                                    <!-- Table Rows Populated by JS -->
                                 </tbody>
                             </table>
                         </div>
-                        <div id="emptyState" class="hidden p-8 text-center text-slate-500 space-y-2">
-                            <i class="fa-solid fa-folder-open text-4xl text-slate-300"></i>
-                            <p class="text-xs font-semibold">Belum ada peserta yang sesuai filter ini.</p>
-                        </div>
+                    </div>
+                    
+                    <div class="mt-4 flex justify-between items-center text-xs">
+                        <span class="text-slate-500" id="totalTimInfo">Total: 0 Tim Terdaftar</span>
+                        <button onclick="clearAllData()" class="text-rose-600 hover:text-rose-800 font-bold px-3 py-1.5 rounded-lg hover:bg-rose-50 transition">
+                            <i class="fa-regular fa-trash-can mr-1"></i> Hapus Semua Data
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ORGANIZERS & FOOTER SECTION -->
-    <footer class="bg-slate-900/90 text-white pt-12 pb-8 border-t border-slate-800/80 backdrop-blur-xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-slate-800">
-                <div class="space-y-3 md:col-span-2">
-                    <div class="flex items-center space-x-3">
-                        <div class="bg-brand-600 text-white p-2 rounded-xl font-black text-lg shadow-md">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-                        <span class="font-extrabold text-base text-white">Indonesia Tangible Coding 2026</span>
-                    </div>
-                    <p class="text-xs text-slate-400 leading-relaxed max-w-md">
-                        Kompetisi koding nasional terbesar menuju World Cup. Dikelola oleh kolaborasi <strong>Yayasan Sukma, Universitas Sebelas Maret (UNS), Prestasi Junior Indonesia,</strong> dan <strong>Leva Foundation</strong>.
-                    </p>
-                    <div class="text-xs text-brand-300 font-semibold">
-                        Official Link: <a href="https://bit.ly/sukma-tangible-2026" target="_blank" class="underline hover:text-brand-200">bit.ly/sukma-tangible-2026</a>
-                    </div>
-                </div>
-
-                <div class="space-y-2 text-xs">
-                    <h4 class="font-bold text-slate-200 text-xs uppercase tracking-wider mb-3">Layanan Contact & Info</h4>
-                    <ul class="space-y-2 text-slate-400">
-                        <li><i class="fa-solid fa-globe text-brand-400 mr-2"></i> pidie.sukmabangsa.sch.id</li>
-                        <li><i class="fa-solid fa-globe text-brand-400 mr-2"></i> bireuen.sukmabangsa.sch.id</li>
-                        <li><i class="fa-solid fa-globe text-brand-400 mr-2"></i> lhok.sukmabangsa.sch.id</li>
-                    </ul>
-                </div>
-
-                <div class="space-y-2 text-xs">
-                    <h4 class="font-bold text-slate-200 text-xs uppercase tracking-wider mb-3">Kontak Sekolah Sukma Bangsa</h4>
-                    <ul class="space-y-2 text-slate-400">
-                        <li><i class="fa-brands fa-whatsapp text-brand-400 mr-2"></i> SSB Pidie: 0823-****-****</li>
-                        <li><i class="fa-brands fa-whatsapp text-brand-400 mr-2"></i> SSB Bireuen: 0853-****-****</li>
-                        <li><i class="fa-brands fa-whatsapp text-brand-400 mr-2"></i> SSB Lhokseumawe: 0852-****-****</li>
-                        <li><i class="fa-brands fa-whatsapp text-brand-400 mr-2"></i> SSB Sigli: 0852-****-****</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
-                <p>&copy; 2026 Indonesia Tangible Unplugged Coding Competition. All rights reserved.</p>
-                <div class="flex space-x-4">
-                    <a href="#pendaftaran" class="hover:text-white transition">Pendaftaran</a>
-                    <a href="#jadwal" class="hover:text-white transition">Jadwal</a>
-                </div>
-            </div>
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-white/70 py-8 border-t border-white/10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs flex flex-col items-center gap-4">
+            <div class="text-2xl text-white/20"><i class="fa-solid fa-code"></i></div>
+            <p>&copy; 2026 Indonesia Tangible Unplugged Coding Competition.</p>
+            <p>Dikelola oleh Yayasan Sukma, UNS, Prestasi Junior Indonesia, dan Leva Foundation.</p>
         </div>
     </footer>
 
-    <!-- MODAL 1: TIKET BUKTI PENDAFTARAN -->
-    <div id="ticketModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
-        <div class="glass-panel rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-white/80">
-            <div class="glass-dark-banner text-white p-6 relative">
-                <button onclick="closeTicketModal()" class="absolute top-4 right-4 text-brand-200 hover:text-white text-xl">
-                    <i class="fa-solid fa-xmark"></i>
+    <!-- G-SHEETS SETUP MODAL & PANDUAN -->
+    <div id="gsheetsSetupModal" class="fixed inset-0 z-[110] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-2xl w-full mx-4 shadow-2xl transform scale-95 transition-transform duration-300 border border-slate-100 max-h-[90vh] overflow-y-auto" id="gsheetsModalContent">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-black text-slate-800 flex items-center gap-2">
+                    <i class="fa-solid fa-file-excel text-emerald-600"></i> Panduan Integrasi G-Sheets
+                </h3>
+                <button onclick="closeGSheetsSetup()" class="text-slate-400 hover:text-rose-500 transition">
+                    <i class="fa-solid fa-xmark text-xl"></i>
                 </button>
-                <div class="text-[10px] font-black uppercase tracking-widest text-brand-200">Bukti Pendaftaran Resmi</div>
-                <h3 id="ticketTeamName" class="text-2xl font-black mt-1">Nama Tim</h3>
-                <p id="ticketSchool" class="text-xs text-brand-100 mt-0.5">Asal Sekolah</p>
             </div>
             
-            <div class="p-6 space-y-4 text-xs">
-                <div class="glass-card p-3 rounded-2xl border border-white/80 grid grid-cols-2 gap-2">
-                    <div>
-                        <span class="text-slate-400 block text-[10px] font-semibold">ID Registrasi</span>
-                        <strong id="ticketId" class="text-slate-800 font-black">ITUCC-2026-000</strong>
-                    </div>
-                    <div>
-                        <span class="text-slate-400 block text-[10px] font-semibold">Jenjang & Jadwal</span>
-                        <strong id="ticketJenjangSchedule" class="text-brand-700 font-extrabold">SD (08.00 - 10.00 WIB)</strong>
-                    </div>
-                </div>
+            <div class="space-y-4 text-xs sm:text-sm text-slate-600">
+                <p>Ikuti langkah berikut untuk menghubungkan pendaftaran ini dengan Google Sheets Anda secara otomatis:</p>
+                
+                <ol class="list-decimal pl-5 space-y-2 font-medium">
+                    <li>Buka <a href="https://sheets.google.new" target="_blank" class="text-brand-600 hover:text-brand-800 underline font-bold">Google Sheets Baru</a> dan beri nama file Anda (misal: Data ITUCC 2026).</li>
+                    <li>Pada menu atas, klik <strong>Ekstensi</strong> (Extensions) > <strong>Apps Script</strong>.</li>
+                    <li>Hapus semua kode bawaan yang ada di editor, lalu <strong class="text-slate-800">Copy & Paste</strong> kode berikut ini:</li>
+                </ol>
 
-                <div>
-                    <span class="text-slate-700 font-bold block mb-1.5">Daftar Anggota Tim:</span>
-                    <ul id="ticketMembersList" class="glass-card p-3 rounded-2xl border border-white/80 space-y-1.5 font-medium">
-                        <!-- Members list inserted here -->
-                    </ul>
-                </div>
-
-                <div class="flex items-center justify-center py-2">
-                    <div id="qrcode" class="p-2 bg-white rounded-2xl shadow-sm border border-slate-200"></div>
-                </div>
-
-                <div class="pt-2 flex gap-3">
-                    <button onclick="window.print()" class="w-full bg-brand-700 hover:bg-brand-800 text-white font-extrabold py-2.5 rounded-xl transition flex items-center justify-center gap-2 shadow-sm">
-                        <i class="fa-solid fa-print"></i> Cetak / Simpan PDF
+                <div class="relative my-3 group">
+                    <textarea id="appsScriptCode" readonly class="w-full h-40 p-4 bg-slate-800 rounded-xl text-xs font-mono text-emerald-400 border border-slate-700 focus:outline-none resize-none leading-relaxed">
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var data = JSON.parse(e.postData.contents);
+  
+  // Jika ini data pertama, buat header
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(['ID Tim', 'Waktu Daftar', 'Nama Tim', 'Asal Sekolah', 'Jenjang', 'Mode', 'Pembina', 'Data Anggota']);
+  }
+  
+  data.forEach(function(row) {
+    sheet.appendRow([row.id, row.timestamp, row.namaTim, row.namaSekolah, row.jenjang, row.modeLomba, row.guruPembina, JSON.stringify(row.members)]);
+  });
+  
+  return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
+}</textarea>
+                    <button onclick="copyAppsScript()" class="absolute top-3 right-3 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-3 py-1.5 rounded-lg text-xs font-bold transition backdrop-blur-sm flex items-center gap-1.5">
+                        <i class="fa-regular fa-copy"></i> Copy Kode
                     </button>
-                    <button onclick="closeTicketModal()" class="w-full bg-slate-200/80 hover:bg-slate-300/80 text-slate-800 font-bold py-2.5 rounded-xl transition">
-                        Tutup
-                    </button>
                 </div>
+
+                <ol class="list-decimal pl-5 space-y-2 font-medium" start="4">
+                    <li>Klik ikon <strong>Simpan</strong> (Save project) di bagian atas.</li>
+                    <li>Klik tombol biru <strong>Terapkan (Deploy)</strong> di kanan atas > pilih <strong>Deployment baru (New deployment)</strong>.</li>
+                    <li>Klik ikon gerigi ⚙️ (Pilih jenis/Select type) > Centang <strong>Aplikasi Web (Web app)</strong>.</li>
+                    <li>Pada bagian <em>Akses (Who has access)</em>, ubah menjadi <strong>Siapa saja (Anyone)</strong>.</li>
+                    <li>Klik <strong>Terapkan (Deploy)</strong>. <em>(Jika diminta otorisasi, klik "Izinkan Akses / Authorize access" dan lanjutkan peringatan keamanan Google dengan klik Advanced > Go to project).</em></li>
+                    <li>Terakhir, <strong class="text-slate-800">Copy URL Aplikasi Web (Web app URL)</strong> yang muncul dan paste ke kolom di bawah ini:</li>
+                </ol>
+
+                <div class="mt-6 p-4 bg-brand-50 rounded-xl border border-brand-200">
+                    <label for="gsheetsUrlInput" class="block text-xs font-extrabold text-brand-800 mb-2 uppercase tracking-wide">
+                        URL Web App Google Apps Script <span class="text-rose-500">*</span>
+                    </label>
+                    <input type="url" id="gsheetsUrlInput" placeholder="https://script.google.com/macros/s/.../exec" class="w-full p-3 rounded-lg border border-brand-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none text-xs transition">
+                    <p class="text-[10px] text-brand-600 mt-2"><i class="fa-solid fa-circle-info"></i> URL ini akan disimpan di browser Anda untuk keperluan ekspor data.</p>
+                </div>
+            </div>
+
+            <div class="mt-6 flex justify-end gap-3 pt-4 border-t border-slate-100">
+                <button onclick="closeGSheetsSetup()" class="px-5 py-2.5 text-slate-500 hover:bg-slate-100 rounded-xl text-xs font-bold transition">Tutup Panduan</button>
+                <button onclick="saveGSheetsUrl()" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-bold transition shadow-md flex items-center gap-2">
+                    <i class="fa-solid fa-floppy-disk"></i> Simpan URL Konfigurasi
+                </button>
             </div>
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- CUSTOM MODAL COMPONENT (Replaces alert()) -->
+    <div id="customModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full mx-4 shadow-2xl transform scale-95 transition-transform duration-300 border border-slate-100" id="modalContent">
+            <div id="modalIconContainer" class="w-16 h-16 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                <i id="modalIcon" class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 id="modalTitle" class="text-xl font-black text-slate-800 text-center mb-2">Berhasil</h3>
+            <p id="modalMessage" class="text-slate-500 text-sm text-center mb-6 leading-relaxed">Operasi berhasil dilakukan.</p>
+            <button onclick="closeModal()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 rounded-xl transition">
+                Tutup Peringatan
+            </button>
+        </div>
+    </div>
+
     <script>
-        // Password/PIN Khusus Admin untuk Mengakses Rekap Data
-        const ADMIN_PIN = "888999";
-        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzPc8v9rFbPX7BdIrPLWUJz0aDmRWmFJSAehEei8X4AuFWRB41RtccZ0ABour5BD_W-9w/exec";
-      async function handleRegistrationSubmit(e) {
-    e.preventDefault();
-
-    const submitBtn = document.getElementById('submitBtn');
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Menyimpan...`;
-
-    const jenjang = document.querySelector('input[name="jenjang"]:checked').value;
-    const namaTim = document.getElementById('namaTim').value.trim();
-    const namaSekolah = document.getElementById('namaSekolah').value.trim();
-    const modeLomba = document.getElementById('modeLomba').value;
-    const guruPembina = document.getElementById('guruPembina').value.trim() || '-';
-
-    const memberNames = Array.from(document.querySelectorAll('input[name="memberName[]"]')).map(i => i.value.trim());
-    const memberClasses = Array.from(document.querySelectorAll('select[name="memberClass[]"]')).map(s => s.value);
-    const memberPhones = Array.from(document.querySelectorAll('input[name="memberPhone[]"]')).map(i => i.value.trim());
-
-    const members = memberNames.map((name, i) => ({
-        nama: name,
-        kelas: memberClasses[i],
-        phone: memberPhones[i]
-    }));
-
-    const now = new Date();
-    const newReg = {
-        id: `ITUCC-2026-${String(registrations.length + 1).padStart(3, '0')}`,
-        tanggal: `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`,
-        jenjang,
-        namaTim,
-        namaSekolah,
-        modeLomba,
-        guruPembina,
-        members
-    };
-
-    // 1. Simpan Lokal Browser
-    registrations.unshift(newReg);
-    saveDataToStorage();
-
-    // 2. Kirim ke Google Sheets
-    if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== "") {
-        try {
-            await fetch(GOOGLE_SCRIPT_URL, {
-                method: 'POST',
-                mode: 'no-cors', // Penting agar lolos CORS Google
-                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                body: JSON.stringify(newReg)
-            });
-            console.log("Data berhasil dikirim ke Google Sheets!");
-        } catch (error) {
-            console.error("Gagal mengirim ke Google Sheets:", error);
-        }
-    }
-
-    // Reset Form
-    document.getElementById('registrationForm').reset();
-    document.getElementById('membersContainer').innerHTML = '';
-    memberCounter = 0;
-    addMemberRow();
-    addMemberRow();
-
-    if (!document.getElementById('adminContentState').classList.contains('hidden')) {
-        updateClassFilterOptions();
-        renderRegistrationsTable();
-        updateStats();
-    }
-
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> Kirim Pendaftaran`;
-
-    openTicketModal(newReg);
-}  
-
-        // Fungsi untuk menyensor nomor telepon/HP menjadi bintang (***)
-        function maskPhoneNumber(phone) {
-            if (!phone) return '***';
-            const cleanPhone = phone.trim();
-            if (cleanPhone.length <= 4) {
-                return '***';
-            }
-            // Menampilkan 4 digit awal, sisa nomor disamarkan dengan Bintang
-            return cleanPhone.substring(0, 4) + '-****-****';
-        }
-
-        // Schedule mapping by Jenjang
-        const SCHEDULE_MAP = {
-            'SD': '08.00 - 10.00 WIB',
-            'SMP': '10.00 - 12.00 WIB',
-            'SMA': '14.00 - 16.00 WIB'
-        };
-
-        // Class options per Jenjang
-        const CLASS_OPTIONS = {
+        // GLOBAL STATE
+        let memberCount = 0;
+        const MAX_MEMBERS = 4;
+        
+        // Data kelas berdasarkan jenjang
+        const classMapping = {
             'SD': ['Kelas 1', 'Kelas 2', 'Kelas 3', 'Kelas 4', 'Kelas 5', 'Kelas 6'],
             'SMP': ['Kelas 7', 'Kelas 8', 'Kelas 9'],
             'SMA': ['Kelas 10', 'Kelas 11', 'Kelas 12']
         };
 
-        // Local Storage Key
-        const STORAGE_KEY = 'ITUCC_2026_REGISTRATIONS_DATA';
-
-        // Sample initial registrations
-        const INITIAL_MOCK_DATA = [];
-
-        // Global State
-        let registrations = [];
-        let activeJenjangFilter = 'SEMUA';
-        let memberCounter = 0;
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedData = localStorage.getItem(STORAGE_KEY);
-            if (savedData) {
-                try {
-                    registrations = JSON.parse(savedData);
-                } catch (e) {
-                    registrations = INITIAL_MOCK_DATA;
-                }
-            } else {
-                registrations = INITIAL_MOCK_DATA;
-                saveDataToStorage();
-            }
-
-            // Initialize member rows in form (default 2 members)
-            addMemberRow();
-            addMemberRow();
-
-            // Mobile menu toggle setup
-            document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-                document.getElementById('mobileMenu').classList.toggle('hidden');
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            addMemberRow(); // Tambah anggota pertama secara otomatis
+            loadRegistrations(); // Muat data di tabel (hidden by default)
+            
+            // Mobile Menu Toggle
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
             });
         });
 
-        function unlockAdminData() {
-            const inputPin = document.getElementById('adminPinInput').value;
-            if (inputPin === ADMIN_PIN) {
-                document.getElementById('adminLockState').classList.add('hidden');
-                document.getElementById('adminContentState').classList.remove('hidden');
-
-                // Render data setelah terautentikasi
-                updateClassFilterOptions();
-                renderRegistrationsTable();
-                updateStats();
-            } else {
-                alert('PIN Salah! Akses ditolak.');
+        // --- Form Functions ---
+        function setJenjangFilter(jenjang) {
+            const radios = document.getElementsByName('jenjang');
+            for(let radio of radios) {
+                if(radio.value === jenjang) {
+                    radio.checked = true;
+                    updateClassDropdowns();
+                    break;
+                }
             }
         }
 
-        function lockAdminData() {
-            document.getElementById('adminPinInput').value = '';
-            document.getElementById('adminLockState').classList.remove('hidden');
-            document.getElementById('adminContentState').classList.add('hidden');
+        function updateClassDropdowns() {
+            const selectedJenjang = document.querySelector('input[name="jenjang"]:checked')?.value;
+            if(!selectedJenjang) return;
+
+            const selects = document.querySelectorAll('.member-class-select');
+            const classes = classMapping[selectedJenjang];
+
+            selects.forEach(select => {
+                const currentValue = select.value;
+                select.innerHTML = '<option value="" disabled selected>Pilih Kelas</option>';
+                classes.forEach(cls => {
+                    const option = document.createElement('option');
+                    option.value = cls;
+                    option.textContent = cls;
+                    select.appendChild(option);
+                });
+                
+                // Coba pertahankan value lama jika masih valid di jenjang baru
+                if(classes.includes(currentValue)) {
+                    select.value = currentValue;
+                }
+            });
         }
 
-        function saveDataToStorage() {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(registrations));
-        }
-
-        // Add member row dynamically
         function addMemberRow() {
-            if (memberCounter >= 4) {
-                alert('Maksimal 4 anggota per tim.');
+            if(memberCount >= MAX_MEMBERS) {
+                showModal('Batas Anggota', 'Maksimal anggota dalam satu tim adalah 4 orang.', 'warning');
                 return;
             }
-            memberCounter++;
-            const container = document.getElementById('membersContainer');
-            
-            const selectedJenjang = document.querySelector('input[name="jenjang"]:checked')?.value || 'SD';
-            const classes = CLASS_OPTIONS[selectedJenjang] || CLASS_OPTIONS['SD'];
-            
-            const memberRowHtml = `
-                <div id="memberRow_${memberCounter}" class="member-row glass-card p-4 rounded-2xl relative transition">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-bold text-slate-700 flex items-center gap-2">
-                            <span class="w-5 h-5 bg-brand-700 text-white rounded-full flex items-center justify-center text-[10px] font-black">${memberCounter}</span>
-                            Anggota ${memberCounter}
-                        </span>
-                        ${memberCounter > 1 ? `
-                            <button type="button" onclick="removeMemberRow(${memberCounter})" class="text-rose-500 hover:text-rose-700 text-xs font-semibold flex items-center gap-1">
-                                <i class="fa-solid fa-trash-can"></i> Hapus
-                            </button>
-                        ` : '<span class="text-[10px] text-brand-800 bg-brand-100 px-2 py-0.5 rounded-lg font-bold">Ketua Tim</span>'}
-                    </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                        <div>
-                            <label class="block text-[11px] font-bold text-slate-600 mb-1">Nama Lengkap <span class="text-rose-500">*</span></label>
-                            <input type="text" name="memberName[]" required placeholder="Nama Siswa" class="glass-input w-full py-2 px-3 rounded-xl text-xs focus:outline-none">
+            memberCount++;
+            const container = document.getElementById('membersContainer');
+            const rowId = `member_row_${Date.now()}`;
+            
+            // Cek jenjang saat ini untuk opsi kelas
+            const selectedJenjang = document.querySelector('input[name="jenjang"]:checked')?.value;
+            const classOptions = selectedJenjang ? classMapping[selectedJenjang] : [];
+            let optionsHTML = '<option value="" disabled selected>Pilih Kelas</option>';
+            classOptions.forEach(cls => {
+                optionsHTML += `<option value="${cls}">${cls}</option>`;
+            });
+
+            const html = `
+                <div id="${rowId}" class="bg-white/40 p-4 rounded-2xl border border-white/60 relative group transition-all duration-300 hover:bg-white/60">
+                    ${memberCount > 1 ? `
+                        <button type="button" onclick="removeMemberRow('${rowId}')" class="absolute -top-2 -right-2 w-7 h-7 bg-white text-rose-500 hover:bg-rose-50 rounded-full border border-rose-200 flex items-center justify-center text-xs shadow-sm transition transform hover:scale-110">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    ` : ''}
+                    
+                    <h4 class="text-[10px] font-black tracking-wider text-slate-500 mb-2 uppercase">Anggota ${memberCount} ${memberCount === 1 ? '(Ketua)' : ''}</h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+                        <div class="md:col-span-5">
+                            <input type="text" name="member_name[]" required placeholder="Nama Lengkap Siswa" class="glass-input w-full py-2 px-3 rounded-xl text-xs focus:outline-none transition">
                         </div>
-                        <div>
-                            <label class="block text-[11px] font-bold text-slate-600 mb-1">Kelas <span class="text-rose-500">*</span></label>
-                            <select name="memberClass[]" required class="member-class-dropdown glass-input w-full py-2 px-3 rounded-xl text-xs focus:outline-none">
-                                ${classes.map(c => `<option value="${c}">${c}</option>`).join('')}
+                        <div class="md:col-span-3">
+                            <select name="member_class[]" required class="member-class-select glass-input w-full py-2 px-3 rounded-xl text-xs focus:outline-none transition">
+                                ${optionsHTML || '<option value="" disabled selected>Pilih Jenjang Dulu</option>'}
                             </select>
                         </div>
-                        <div>
-                            <label class="block text-[11px] font-bold text-slate-600 mb-1">No. HP / WA <span class="text-rose-500">*</span></label>
-                            <input type="tel" name="memberPhone[]" required placeholder="08xxxxxxxxxx" class="glass-input w-full py-2 px-3 rounded-xl text-xs focus:outline-none">
+                        <div class="md:col-span-4 relative">
+                            <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-brand-600/60">
+                                <i class="fa-brands fa-whatsapp text-sm"></i>
+                            </span>
+                            <input type="tel" name="member_wa[]" required placeholder="08xx-xxxx-xxxx" class="glass-input w-full pl-8 pr-3 py-2 rounded-xl text-xs focus:outline-none transition">
                         </div>
                     </div>
                 </div>
             `;
-            container.insertAdjacentHTML('beforeend', memberRowHtml);
+            
+            container.insertAdjacentHTML('beforeend', html);
         }
 
-        function removeMemberRow(id) {
-            const row = document.getElementById(`memberRow_${id}`);
-            if (row) {
+        function removeMemberRow(rowId) {
+            const row = document.getElementById(rowId);
+            if(row) {
                 row.remove();
-                renumberMembers();
+                memberCount--;
+                // Update label "Anggota X"
+                const headers = document.querySelectorAll('#membersContainer h4');
+                headers.forEach((h, index) => {
+                    const num = index + 1;
+                    h.textContent = `ANGGOTA ${num} ${num === 1 ? '(KETUA)' : ''}`;
+                });
             }
         }
 
-        function renumberMembers() {
-            const rows = document.querySelectorAll('.member-row');
-            memberCounter = rows.length;
-            rows.forEach((row, index) => {
-                const num = index + 1;
-                row.id = `memberRow_${num}`;
-                const badge = row.querySelector('.flex .w-5');
-                if (badge) badge.textContent = num;
-            });
-        }
-
-        function updateClassDropdowns() {
-            const selectedJenjang = document.querySelector('input[name="jenjang"]:checked')?.value || 'SD';
-            const classes = CLASS_OPTIONS[selectedJenjang] || CLASS_OPTIONS['SD'];
+        function handleRegistrationSubmit(event) {
+            event.preventDefault();
             
-            document.querySelectorAll('.member-class-dropdown').forEach(dropdown => {
-                dropdown.innerHTML = classes.map(c => `<option value="${c}">${c}</option>`).join('');
-            });
+            const jenjang = document.querySelector('input[name="jenjang"]:checked')?.value;
+            if(!jenjang) {
+                showModal('Peringatan', 'Silakan pilih jenjang sekolah terlebih dahulu (SD/SMP/SMA).', 'error');
+                return;
+            }
+
+            const namaTim = document.getElementById('namaTim').value;
+            const namaSekolah = document.getElementById('namaSekolah').value;
+            const modeLomba = document.getElementById('modeLomba').value;
+            const guruPembina = document.getElementById('guruPembina').value;
+
+            const memberNames = document.getElementsByName('member_name[]');
+            const memberClasses = document.getElementsByName('member_class[]');
+            const memberWAs = document.getElementsByName('member_wa[]');
+
+            let members = [];
+            for(let i=0; i<memberNames.length; i++){
+                members.push({
+                    name: memberNames[i].value,
+                    kelas: memberClasses[i].value,
+                    wa: memberWAs[i].value
+                });
+            }
+
+            const newData = {
+                id: 'TIM-' + Math.random().toString(36).substr(2, 9).toUpperCase(),
+                timestamp: new Date().toLocaleString('id-ID'),
+                jenjang,
+                namaTim,
+                namaSekolah,
+                modeLomba,
+                guruPembina,
+                members
+            };
+
+            // Simpan ke LocalStorage
+            let registrations = JSON.parse(localStorage.getItem('itucc2026_registrations') || '[]');
+            registrations.push(newData);
+            localStorage.setItem('itucc2026_registrations', JSON.stringify(registrations));
+
+            showModal('Pendaftaran Berhasil!', `Tim <strong>${namaTim}</strong> telah berhasil didaftarkan. ID Registrasi: ${newData.id}`, 'success');
+            
+            // Reset form
+            document.getElementById('registrationForm').reset();
+            document.getElementById('membersContainer').innerHTML = '';
+            memberCount = 0;
+            addMemberRow();
+            
+            // Refresh table if admin is logged in
+            loadRegistrations();
         }
 
-        // fungsi Pengiriman data
-        async function handleRegistrationSubmit(e) {
-    e.preventDefault();
+        // --- Admin Functions ---
+        const ADMIN_PIN = "12345"; // Hardcoded for demo purposes
 
-    const submitBtn = document.getElementById('submitBtn');
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Menyimpan...`;
-
-    const jenjang = document.querySelector('input[name="jenjang"]:checked').value;
-    const namaTim = document.getElementById('namaTim').value.trim();
-    const namaSekolah = document.getElementById('namaSekolah').value.trim();
-    const modeLomba = document.getElementById('modeLomba').value;
-    const guruPembina = document.getElementById('guruPembina').value.trim() || '-';
-
-    const memberNames = Array.from(document.querySelectorAll('input[name="memberName[]"]')).map(i => i.value.trim());
-    const memberClasses = Array.from(document.querySelectorAll('select[name="memberClass[]"]')).map(s => s.value);
-    const memberPhones = Array.from(document.querySelectorAll('input[name="memberPhone[]"]')).map(i => i.value.trim());
-
-    const members = memberNames.map((name, i) => ({
-        nama: name,
-        kelas: memberClasses[i],
-        phone: memberPhones[i]
-    }));
-
-    const now = new Date();
-    const newReg = {
-        id: `ITUCC-2026-${String(registrations.length + 1).padStart(3, '0')}`,
-        tanggal: `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`,
-        jenjang,
-        namaTim,
-        namaSekolah,
-        modeLomba,
-        guruPembina,
-        members
-    };
-
-    // 1. Simpan Lokal (Browser)
-    registrations.unshift(newReg);
-    saveDataToStorage();
-
-    // 2. Kirim ke Google Spreadsheet (Async)
-    if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== "PASANG_URL_WEB_APP_GOOGLE_DI_SINI") {
-        try {
-            await fetch(GOOGLE_SCRIPT_URL, {
-                method: 'POST',
-                mode: 'no-cors', // Menghindari masalah CORS Google Script
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(newReg)
-            });
-        } catch (error) {
-            console.error("Gagal mengirim ke Google Sheets:", error);
+        function unlockAdmin() {
+            const input = document.getElementById('adminPin');
+            const err = document.getElementById('pinError');
+            
+            if(input.value === ADMIN_PIN) {
+                document.getElementById('adminLockScreen').classList.add('hidden');
+                document.getElementById('adminDataView').classList.remove('hidden');
+                document.getElementById('adminActionBtnContainer').classList.remove('hidden');
+                input.value = '';
+                err.style.opacity = '0';
+            } else {
+                err.style.opacity = '1';
+                input.value = '';
+                setTimeout(() => { err.style.opacity = '0'; }, 3000);
+            }
         }
-    }
 
-    // Reset Form
-    document.getElementById('registrationForm').reset();
-    document.getElementById('membersContainer').innerHTML = '';
-    memberCounter = 0;
-    addMemberRow();
-    addMemberRow();
+        function logoutAdmin() {
+            document.getElementById('adminLockScreen').classList.remove('hidden');
+            document.getElementById('adminDataView').classList.add('hidden');
+            document.getElementById('adminActionBtnContainer').classList.add('hidden');
+        }
 
-    if (!document.getElementById('adminContentState').classList.contains('hidden')) {
-        updateClassFilterOptions();
-        renderRegistrationsTable();
-        updateStats();
-    }
-
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> Kirim Pendaftaran`;
-
-    openTicketModal(newReg);
-}
-
-        function renderRegistrationsTable() {
+        function loadRegistrations() {
             const tbody = document.getElementById('registrationsTableBody');
-            const emptyState = document.getElementById('emptyState');
+            const registrations = JSON.parse(localStorage.getItem('itucc2026_registrations') || '[]');
+            
+            document.getElementById('totalTimInfo').textContent = `Total: ${registrations.length} Tim Terdaftar`;
             tbody.innerHTML = '';
 
-            const selectedClass = document.getElementById('filterKelas').value;
-            const searchKeyword = document.getElementById('searchInput').value.toLowerCase().trim();
-
-            const filtered = registrations.filter(reg => {
-                if (activeJenjangFilter !== 'SEMUA' && reg.jenjang !== activeJenjangFilter) {
-                    return false;
-                }
-                if (selectedClass !== 'SEMUA') {
-                    const hasClass = reg.members.some(m => m.kelas === selectedClass);
-                    if (!hasClass) return false;
-                }
-                if (searchKeyword) {
-                    const matchTim = reg.namaTim.toLowerCase().includes(searchKeyword);
-                    const matchSekolah = reg.namaSekolah.toLowerCase().includes(searchKeyword);
-                    const matchMember = reg.members.some(m => m.nama.toLowerCase().includes(searchKeyword));
-                    if (!matchTim && !matchSekolah && !matchMember) return false;
-                }
-                return true;
-            });
-
-            if (filtered.length === 0) {
-                emptyState.classList.remove('hidden');
+            if(registrations.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" class="p-8 text-center text-slate-400 italic">Belum ada tim yang mendaftar.</td></tr>`;
                 return;
-            } else {
-                emptyState.classList.add('hidden');
             }
 
-            filtered.forEach((reg, index) => {
-                const membersFormatted = reg.members.map(m => `<div class="text-[11px] font-semibold text-slate-800"><i class="fa-regular fa-user text-brand-600 mr-1"></i>${m.nama} <span class="bg-slate-200/70 text-slate-700 text-[9px] px-1.5 py-0.2 rounded font-bold">${m.kelas}</span></div>`).join('');
-                
-                // Menggunakan fungsi maskPhoneNumber untuk menyensor nomor HP (***)
-                const phonesFormatted = reg.members.map(m => `<div class="text-[11px] text-slate-600"><i class="fa-brands fa-whatsapp text-emerald-600 mr-1"></i>${maskPhoneNumber(m.phone)}</div>`).join('');
-
-                let jenjangBadgeClass = 'bg-emerald-100 text-emerald-800 border-emerald-300';
-                if (reg.jenjang === 'SMP') jenjangBadgeClass = 'bg-sky-100 text-sky-800 border-sky-300';
-                if (reg.jenjang === 'SMA') jenjangBadgeClass = 'bg-purple-100 text-purple-800 border-purple-300';
+            registrations.forEach((reg, index) => {
+                const membersHTML = reg.members.map((m, i) => 
+                    `<div class="mb-1 last:mb-0"><span class="font-bold text-slate-700">${m.name}</span> <span class="text-[10px] text-slate-400">(${m.kelas})</span></div>`
+                ).join('');
 
                 const tr = document.createElement('tr');
-                tr.className = 'hover:bg-white/60 transition';
+                tr.className = "hover:bg-brand-50/50 transition duration-150 group";
                 tr.innerHTML = `
-                    <td class="p-3.5 font-bold text-slate-500">${index + 1}</td>
-                    <td class="p-3.5">
-                        <span class="inline-block border px-2.5 py-1 rounded-full text-[10px] font-black ${jenjangBadgeClass}">
-                            ${reg.jenjang}
-                        </span>
+                    <td class="p-4 text-center font-bold text-slate-400 group-hover:text-brand-500">${index + 1}</td>
+                    <td class="p-4">
+                        <div class="font-bold text-slate-800">${reg.namaTim}</div>
+                        <div class="text-[11px] text-slate-500 flex items-center gap-1 mt-0.5"><i class="fa-solid fa-building-columns text-[10px]"></i> ${reg.namaSekolah}</div>
+                        ${reg.guruPembina ? `<div class="text-[10px] text-slate-400 mt-1">Pembina: ${reg.guruPembina}</div>` : ''}
                     </td>
-                    <td class="p-3.5">
-                        <strong class="text-slate-900 block font-bold text-xs">${reg.namaTim}</strong>
-                        <span class="text-[10px] text-slate-400">ID: ${reg.id}</span>
-                    </td>
-                    <td class="p-3.5 text-xs text-slate-700 font-semibold">${reg.namaSekolah}</td>
-                    <td class="p-3.5 space-y-1">${membersFormatted}</td>
-                    <td class="p-3.5 space-y-1">${phonesFormatted}</td>
-                    <td class="p-3.5">
-                        <span class="bg-slate-100 text-slate-700 border border-slate-200 text-[10px] font-bold px-2 py-0.5 rounded-md">
+                    <td class="p-4">
+                        <span class="inline-block px-2 py-1 rounded bg-slate-100 text-slate-600 font-bold mb-1">${reg.jenjang}</span><br>
+                        <span class="text-[10px] ${reg.modeLomba === 'On-site' ? 'text-emerald-600' : 'text-sky-600'} font-semibold border ${reg.modeLomba === 'On-site' ? 'border-emerald-200 bg-emerald-50' : 'border-sky-200 bg-sky-50'} px-1.5 py-0.5 rounded">
                             ${reg.modeLomba}
                         </span>
                     </td>
-                    <td class="p-3.5 text-center">
-                        <button onclick='viewTicket("${reg.id}")' class="bg-brand-50 hover:bg-brand-100 text-brand-700 border border-brand-300 text-[11px] font-bold px-2.5 py-1 rounded-xl transition inline-flex items-center gap-1 shadow-sm">
-                            <i class="fa-solid fa-ticket"></i> Tiket
+                    <td class="p-4 text-[11px]">
+                        ${membersHTML}
+                    </td>
+                    <td class="p-4 text-center">
+                        <button onclick="deleteRow('${reg.id}')" class="w-8 h-8 rounded-full bg-rose-50 text-rose-500 hover:bg-rose-500 hover:text-white transition flex items-center justify-center mx-auto" title="Hapus Tim">
+                            <i class="fa-solid fa-trash-can"></i>
                         </button>
                     </td>
                 `;
@@ -1049,88 +884,163 @@
             });
         }
 
-        function filterByJenjang(jenjang) {
-            activeJenjangFilter = jenjang;
-            document.querySelectorAll('.jenjang-tab-btn').forEach(btn => {
-                btn.className = 'jenjang-tab-btn px-4 py-2 rounded-lg text-xs font-bold text-slate-600 hover:bg-white/80 transition';
-            });
-            document.getElementById(`tab-${jenjang}`).className = 'jenjang-tab-btn px-4 py-2 rounded-lg text-xs font-extrabold transition bg-brand-700 text-white shadow-sm';
-
-            updateClassFilterOptions();
-            applyFilters();
+        function deleteRow(id) {
+            let registrations = JSON.parse(localStorage.getItem('itucc2026_registrations') || '[]');
+            registrations = registrations.filter(r => r.id !== id);
+            localStorage.setItem('itucc2026_registrations', JSON.stringify(registrations));
+            loadRegistrations();
+            showModal('Terhapus', 'Data tim berhasil dihapus dari rekap.', 'success');
         }
 
-        function setJenjangFilter(jenjang) {
-            const radio = document.querySelector(`input[name="jenjang"][value="${jenjang}"]`);
-            if (radio) {
-                radio.checked = true;
-                updateClassDropdowns();
+        function clearAllData() {
+            localStorage.removeItem('itucc2026_registrations');
+            loadRegistrations();
+            showModal('Dikosongkan', 'Seluruh data rekap telah dihapus.', 'success');
+        }
+
+        // --- Google Sheets Integration & Setup ---
+        
+        function openGSheetsSetup() {
+            const modal = document.getElementById('gsheetsSetupModal');
+            const content = document.getElementById('gsheetsModalContent');
+            const input = document.getElementById('gsheetsUrlInput');
+            
+            // Load saved URL if exists
+            const savedUrl = localStorage.getItem('itucc2026_gsheets_url');
+            if(savedUrl) {
+                input.value = savedUrl;
             }
-            filterByJenjang(jenjang);
+            
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
         }
 
-        function updateClassFilterOptions() {
-            const classSelect = document.getElementById('filterKelas');
-            classSelect.innerHTML = '<option value="SEMUA">Semua Kelas</option>';
+        function closeGSheetsSetup() {
+            const modal = document.getElementById('gsheetsSetupModal');
+            const content = document.getElementById('gsheetsModalContent');
+            
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+        }
 
-            let classList = [];
-            if (activeJenjangFilter === 'SEMUA') {
-                classList = [...CLASS_OPTIONS['SD'], ...CLASS_OPTIONS['SMP'], ...CLASS_OPTIONS['SMA']];
-            } else {
-                classList = CLASS_OPTIONS[activeJenjangFilter] || [];
+        function copyAppsScript() {
+            const code = document.getElementById('appsScriptCode');
+            code.select();
+            code.setSelectionRange(0, 99999); /* For mobile devices */
+            
+            navigator.clipboard.writeText(code.value).then(() => {
+                showModal('Tersalin', 'Kode Google Apps Script berhasil disalin ke clipboard.', 'success');
+            }).catch(err => {
+                // Fallback for older browsers / environments
+                document.execCommand('copy');
+                showModal('Tersalin', 'Kode Google Apps Script berhasil disalin.', 'success');
+            });
+        }
+
+        function saveGSheetsUrl() {
+            const input = document.getElementById('gsheetsUrlInput').value.trim();
+            
+            if(!input) {
+                showModal('Gagal', 'URL Web App tidak boleh kosong.', 'error');
+                return;
+            }
+            
+            if(!input.startsWith('https://script.google.com/')) {
+                showModal('Format Salah', 'Pastikan URL diawali dengan https://script.google.com/...', 'warning');
+                return;
+            }
+            
+            localStorage.setItem('itucc2026_gsheets_url', input);
+            closeGSheetsSetup();
+            showModal('Tersimpan', 'URL Google Apps Script berhasil disimpan. Anda sekarang bisa menggunakan fitur Export.', 'success');
+        }
+
+        function exportToGoogleSheets() {
+            const scriptUrl = localStorage.getItem('itucc2026_gsheets_url');
+            
+            if (!scriptUrl) {
+                showModal('Setup Diperlukan', 'Anda belum mengatur URL Google Apps Script. Silakan klik tombol <strong>Setup G-Sheets</strong> terlebih dahulu.', 'warning');
+                openGSheetsSetup();
+                return;
             }
 
-            classList.forEach(c => {
-                const opt = document.createElement('option');
-                opt.value = c;
-                opt.textContent = c;
-                classSelect.appendChild(opt);
+            const registrations = JSON.parse(localStorage.getItem('itucc2026_registrations') || '[]');
+            
+            if (registrations.length === 0) {
+                 showModal('Info', 'Tidak ada data untuk diekspor.', 'warning');
+                 return;
+            }
+
+            // Show loading state
+            const exportBtn = document.querySelector('button[onclick="exportToGoogleSheets()"]');
+            const originalText = exportBtn.innerHTML;
+            exportBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Mengekspor...';
+            exportBtn.disabled = true;
+
+            fetch(scriptUrl, {
+                method: 'POST',
+                // mode: 'no-cors', // Omit unless facing strict CORS issues, but breaks ability to read success response
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8', // Apps script prefers this to avoid preflight issues sometimes
+                },
+                body: JSON.stringify(registrations)
+            })
+            .then(response => {
+                exportBtn.innerHTML = originalText;
+                exportBtn.disabled = false;
+                showModal('Berhasil Ekspor', 'Data berhasil diekspor ke Google Sheets.', 'success');
+            })
+            .catch(error => {
+                console.error('Error exporting to Google Sheets:', error);
+                exportBtn.innerHTML = originalText;
+                exportBtn.disabled = false;
+                
+                // Note: Fetching to Google Apps Script from browser often triggers CORS errors 
+                // in the console even if the data was successfully saved due to redirects.
+                // We show a partial success message as a fallback.
+                showModal('Informasi Ekspor', 'Permintaan ekspor telah dikirim. Silakan cek Google Sheets Anda. Jika data tidak masuk, pastikan URL Web App sudah benar dan akses diset ke "Anyone".', 'success');
             });
         }
 
-        function applyFilters() {
-            renderRegistrationsTable();
+        // --- Custom UI Modal Functions ---
+        function showModal(title, message, type = 'success') {
+            const modal = document.getElementById('customModal');
+            const content = document.getElementById('modalContent');
+            const titleEl = document.getElementById('modalTitle');
+            const msgEl = document.getElementById('modalMessage');
+            const iconContainer = document.getElementById('modalIconContainer');
+            const icon = document.getElementById('modalIcon');
+
+            titleEl.innerHTML = title;
+            msgEl.innerHTML = message;
+
+            // Styling based on type
+            if(type === 'success') {
+                iconContainer.className = 'w-16 h-16 rounded-full flex items-center justify-center text-3xl mx-auto mb-4 bg-emerald-100 text-emerald-500';
+                icon.className = 'fa-solid fa-circle-check';
+            } else if (type === 'error') {
+                iconContainer.className = 'w-16 h-16 rounded-full flex items-center justify-center text-3xl mx-auto mb-4 bg-rose-100 text-rose-500';
+                icon.className = 'fa-solid fa-circle-exclamation';
+            } else if (type === 'warning') {
+                iconContainer.className = 'w-16 h-16 rounded-full flex items-center justify-center text-3xl mx-auto mb-4 bg-amber-100 text-amber-500';
+                icon.className = 'fa-solid fa-triangle-exclamation';
+            }
+
+            // Show modal
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
         }
 
-        function updateStats() {
-            document.getElementById('statTotalTim').textContent = registrations.length;
-            document.getElementById('statSD').textContent = `${registrations.filter(r => r.jenjang === 'SD').length} Tim`;
-            document.getElementById('statSMP').textContent = `${registrations.filter(r => r.jenjang === 'SMP').length} Tim`;
-            document.getElementById('statSMA').textContent = `${registrations.filter(r => r.jenjang === 'SMA').length} Tim`;
-        }
-
-        function openTicketModal(reg) {
-            document.getElementById('ticketTeamName').textContent = reg.namaTim;
-            document.getElementById('ticketSchool').textContent = reg.namaSekolah;
-            document.getElementById('ticketId').textContent = reg.id;
-            document.getElementById('ticketJenjangSchedule').textContent = `${reg.jenjang} (${SCHEDULE_MAP[reg.jenjang]})`;
-
-            const membersList = document.getElementById('ticketMembersList');
-            membersList.innerHTML = reg.members.map((m, i) => `
-                <li class="flex items-center justify-between">
-                    <span>${i+1}. <strong>${m.nama}</strong> (${m.kelas})</span>
-                    <span class="text-slate-500">${maskPhoneNumber(m.phone)}</span>
-                </li>
-            `).join('');
-
-            const qrContainer = document.getElementById('qrcode');
-            qrContainer.innerHTML = '';
-            new QRCode(qrContainer, {
-                text: `ITUCC2026|${reg.id}|${reg.namaTim}`,
-                width: 100,
-                height: 100
-            });
-
-            document.getElementById('ticketModal').classList.remove('hidden');
-        }
-
-        function viewTicket(id) {
-            const reg = registrations.find(r => r.id === id);
-            if (reg) openTicketModal(reg);
-        }
-
-        function closeTicketModal() {
-            document.getElementById('ticketModal').classList.add('hidden');
+        function closeModal() {
+            const modal = document.getElementById('customModal');
+            const content = document.getElementById('modalContent');
+            
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
         }
     </script>
 </body>
