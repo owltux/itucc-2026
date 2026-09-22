@@ -670,8 +670,79 @@
     <script>
         // Password/PIN Khusus Admin untuk Mengakses Rekap Data
         const ADMIN_PIN = "888999";
-        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbylvvaKgr4dVzE2-WbyKnvL4rwvQXmNh50bqJZHTdqJzcn1i_oFJ1kahIIBA1lTOL4DkQ/exec";
-        
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzPc8v9rFbPX7BdIrPLWUJz0aDmRWmFJSAehEei8X4AuFWRB41RtccZ0ABour5BD_W-9w/exec";
+      async function handleRegistrationSubmit(e) {
+    e.preventDefault();
+
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Menyimpan...`;
+
+    const jenjang = document.querySelector('input[name="jenjang"]:checked').value;
+    const namaTim = document.getElementById('namaTim').value.trim();
+    const namaSekolah = document.getElementById('namaSekolah').value.trim();
+    const modeLomba = document.getElementById('modeLomba').value;
+    const guruPembina = document.getElementById('guruPembina').value.trim() || '-';
+
+    const memberNames = Array.from(document.querySelectorAll('input[name="memberName[]"]')).map(i => i.value.trim());
+    const memberClasses = Array.from(document.querySelectorAll('select[name="memberClass[]"]')).map(s => s.value);
+    const memberPhones = Array.from(document.querySelectorAll('input[name="memberPhone[]"]')).map(i => i.value.trim());
+
+    const members = memberNames.map((name, i) => ({
+        nama: name,
+        kelas: memberClasses[i],
+        phone: memberPhones[i]
+    }));
+
+    const now = new Date();
+    const newReg = {
+        id: `ITUCC-2026-${String(registrations.length + 1).padStart(3, '0')}`,
+        tanggal: `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`,
+        jenjang,
+        namaTim,
+        namaSekolah,
+        modeLomba,
+        guruPembina,
+        members
+    };
+
+    // 1. Simpan Lokal Browser
+    registrations.unshift(newReg);
+    saveDataToStorage();
+
+    // 2. Kirim ke Google Sheets
+    if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== "") {
+        try {
+            await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors', // Penting agar lolos CORS Google
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify(newReg)
+            });
+            console.log("Data berhasil dikirim ke Google Sheets!");
+        } catch (error) {
+            console.error("Gagal mengirim ke Google Sheets:", error);
+        }
+    }
+
+    // Reset Form
+    document.getElementById('registrationForm').reset();
+    document.getElementById('membersContainer').innerHTML = '';
+    memberCounter = 0;
+    addMemberRow();
+    addMemberRow();
+
+    if (!document.getElementById('adminContentState').classList.contains('hidden')) {
+        updateClassFilterOptions();
+        renderRegistrationsTable();
+        updateStats();
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> Kirim Pendaftaran`;
+
+    openTicketModal(newReg);
+}  
 
         // Fungsi untuk menyensor nomor telepon/HP menjadi bintang (***)
         function maskPhoneNumber(phone) {
